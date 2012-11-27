@@ -1,0 +1,8 @@
+@(orders: List[Order])(implicit lang: Lang)
+@main(Messages("application.name")) {
+  <dl class="orders">
+    @for(order <- orders) {
+      <dt>@order.ticker</dt>
+      <dd>@order.quantity</dd>
+    }
+</dl> }
