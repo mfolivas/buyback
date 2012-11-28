@@ -5,6 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index
 GET     /orders                     controllers.Orders.list
+POST 	/orders      				controllers.Orders.save
+GET  	/orders/new  				controllers.Orders.newOrder
+GET 	/orders/:ticker  			controllers.Orders.show(ticker: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

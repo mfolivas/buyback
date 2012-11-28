@@ -1,1 +1,13 @@
-application.name = Buyback
+application.name = Buy Back
+
+orders.form = Buy Back Details
+orders.new = (new)
+orders.new.command = New
+orders.new.submit = Add
+orders.new.success = Successfully added buy back {0}.
+validation.errors = Please correct the errors in the form.
+validation.order.duplicate = A buy back with the same ticker already exists
+
+ticker = Ticker
+quantity = Quantity
+order.details = Ticker: {0}

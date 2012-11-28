@@ -1,4 +1,4 @@
-@(title: String)(content: Html)(implicit lang: Lang)
+@(title: String)(content: Html)(implicit flash: Flash, lang: Lang)
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,17 +10,31 @@
 </head>
 <body>
 <div class="screenshot">
+
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
         <a class="brand" href="@routes.Application.index()">
-          @Messages("application.name")
+            @Messages("application.name")
         </a>
       </div>
     </div>
-</div>
+  </div>
+
   <div class="container">
+    @if(flash.get("success").isDefined){
+      <div class="alert alert-success">
+        @flash.get("success")
+      </div>
+    }
+
+    @if(flash.get("error").isDefined){
+      <div class="alert alert-error">
+        @flash.get("error")
+      </div>
+    }
     @content
+    @debug()
   </div>
 </div>
 </body>

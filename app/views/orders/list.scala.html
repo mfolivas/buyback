@@ -1,4 +1,4 @@
-@(orders: List[Order])(implicit lang: Lang)
+@(orders: List[Order])(implicit flash: Flash, lang: Lang)
 @main(Messages("application.name")) {
   <dl class="orders">
     @for(order <- orders) {

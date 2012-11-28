@@ -1,0 +1,21 @@
+@(orderForm: Form[Order])(implicit flash: Flash, lang: Lang)
+@import helper._
+@import helper.twitterBootstrap._
+
+@main(Messages("orders.form")) {
+  <h2>@Messages("orders.form")</h2>
+
+  @helper.form(action = routes.Orders.save()) {
+    <fieldset>
+      <legend>
+        @Messages("order.details", Messages("order.new"))
+      </legend>
+      @helper.inputText(orderForm("ticker"))
+      @helper.inputText(orderForm("quantity"))
+      @helper.inputText(orderForm("start"))
+      @helper.inputText(orderForm("end"))
+    </fieldset>
+    <p><input type="submit" class="btn primary"
+        value='@Messages("orders.new.submit")'></p>
+  }
+}
